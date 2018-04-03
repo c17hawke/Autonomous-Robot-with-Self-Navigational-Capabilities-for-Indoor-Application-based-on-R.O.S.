@@ -1,19 +1,10 @@
 #!/usr/bin/env python
 
 import rospy
-import pygame
 import time
 from std_msgs.msg import Float32
 import cv2
 import numpy
-
-
-
-# def write(e):
-# 	with open('hello.txt', 'a') as f: 
-# 		f.write(str(e))
-
-
 
 
 def callback(data):
@@ -34,7 +25,6 @@ def callback(data):
     	grid = i*50
     	cv2.line(img, (vx+grid,vy), (vx+grid,800), (116,139,69), 1)
     	cv2.imwrite('map1.png', img)
-    	#print i
     vx = 50
     vy = 50
     grid = 1
@@ -45,15 +35,11 @@ def callback(data):
     	#print i
     #--------------ends---------------------------
     image = cv2.imread('map1.png')
-    #print d
     d = int(d*ratio)
     start1 = (400,400)
     end1 = (400+d,400)
     cv2.line(image, start1, end1, (0,255,0), 2)
     cv2.imwrite('map1.png', image)
-    #cv2.imshow('map1.png', image)
-    #cv2.waitKey(1)
-    #write(end1)
     end1 = str(end1[0]) + " " + str(end1[1]) + " "
     with open('hello.txt', 'w') as f: 
 		f.write(end1)
@@ -101,6 +87,7 @@ def callback2(data):
     	f.write(end2)
     joinEnd()
 
+
 def joinEnd():
 	with open('hello.txt', 'r') as f:
 		data = f.read()
@@ -113,8 +100,7 @@ def joinEnd():
 	cv2.imwrite('map1.png', image)
 	cv2.imshow('map1.png', image)
 	cv2.waitKey(1)
-    
-
+	
 
 def subscriber():
     rospy.init_node('listner')
@@ -123,11 +109,7 @@ def subscriber():
     		rospy.Subscriber('dist',Float32, callback)
     	if i == 1:
     		rospy.Subscriber('dist2',Float32, callback2)
-
-
-    #joinend(e1[0],e1[1],e2[0],e2[1])
     rospy.spin()
-
 
 
 if __name__ == "__main__":
@@ -158,10 +140,3 @@ if __name__ == "__main__":
 		subscriber()
 	except rospy.ROSInterruptException:
 		pass
-        #callback(data)
-
-
-
-
-    # pygame.quit()
-    # quit()
