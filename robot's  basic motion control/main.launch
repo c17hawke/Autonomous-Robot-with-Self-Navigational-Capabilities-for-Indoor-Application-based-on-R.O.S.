@@ -1,0 +1,6 @@
+<launch>
+	<node name="co" pkg="fromscratch" type="LtGen.py"/>
+	<node name="left_tick_pub" pkg="fromscratch" type="leftSideTicks.py"/>
+	<node name="right_tick_pub" pkg="fromscratch" type="rightSideTicks.py"/>
+
+</launch>
