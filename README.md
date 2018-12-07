@@ -4,6 +4,10 @@
 
 <ul>
 	<li>
+		<h4>Watch video clip of Final prototype</h4>
+		https://github.com/c17hawke/Autonomous-Robot-with-Self-Navigational-Capabilities-for-Indoor-Application-based-on-R.O.S./blob/master/video/VID_20180706_082805.mp4
+	</li>
+	<li>
 		<h4>Final prototype</h4>
 		<img src="images/main_view.jpg">
 	</li>
