@@ -1,6 +1,6 @@
 <h1>Autonomous Robot with Self Navigational Capabilities for Indoor Application based on R.O.S.</h1>
 
-<h2>Some screenshots and images from the project</h2>
+<h2>Some screenshots, images and video clip from the project</h2>
 
 <ul>
 	<li>
