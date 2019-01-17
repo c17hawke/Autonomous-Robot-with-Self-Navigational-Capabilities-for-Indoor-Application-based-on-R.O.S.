@@ -28,7 +28,7 @@ class SpeedSensor:
 
     def init_interrupt(self):
 	# add rising edge detection on a channel, ignoring further edges for 20ms for switch bounce handling
-	       GPIO.add_event_detect(self.sensor, GPIO.RISING, callback = self.count_pulse, bouncetime = 20)
+	GPIO.add_event_detect(self.sensor, GPIO.RISING, callback = self.count_pulse, bouncetime = 20)
 
     def callback_dir(self,msg):
         self.direction = msg.data
